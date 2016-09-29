@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+	/*.border{
+		box-sizing: border-box;
+		width: 300px;
+		height: 100px;
+		background-color: #ddd;
+		border-left: 10px solid red;
+	}*/
+	/*.pesudo{
+		width: 300px;
+		height: 100px;
+		background-color: #ddd;
+		position: relative;
+	}
+	.pesudo::before{
+		content: "";
+		width: 10px;
+		height: 100px;
+		background-color: red;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}*/
+	/*.linearGradient{
+		width: 300px;
+		height: 100px;
+		background-color: #ddd;
+		background-image: linear-gradient(90deg,red 0px, red 10px, transparent 10px);
+	}*/
+	.boxShadow{
+		width: 300px;
+		height: 100px;
+		background-color: #ddd;
+		/*box-shadow: -10px 0 0 0 red;*/
+		box-shadow: inset 10px 0 0 red;
+	}
+	/*.dropShadow{
+		width: 300px;
+		height: 100px;
+		background-color: #ddd;
+		filter:drop-shadow(-10px 0 0 red);
+	}*/
+
+</style>
+<body>
+	<!-- <div class="border"></div> -->
+	<!-- <div class="pesudo"></div> -->
+	<!-- <div class="linearGradient"></div> -->
+	<div class="boxShadow"></div>
+	<!-- <div class="dropShadow"></div> -->
+
+
+<script src="pageDiv.js"></script>
+<script type="text/javascript" language="javascript">
+// var bb = new pageDiv(1, {
+//     parent: "body",
+//     totalNum: 26,
+//     perNum: 5
+// });
+</script>
+</body>
+</html>
