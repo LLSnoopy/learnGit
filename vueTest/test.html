@@ -6,6 +6,7 @@
 	<script src="https://unpkg.com/vue/dist/vue.js"></script>
 </head>
 <body>
+	<h1>app5和app8作比较</h1>
 	<div id="app">
 		<p>{{message}}</p>
 	</div>
@@ -39,6 +40,11 @@
 		<ol>
 			<todo-item v-for="item in list" v-bind:todo="item"></todo-item>
 		</ol>
+	</div>
+	<!-- 计算属性 -->
+	<div id="app8_computed">
+		<p>Original message: {{messageOld}}</p>
+		<p>Computed reversed message: {{messageReversed}}</p>
 	</div>
 
 	<script>
@@ -99,6 +105,17 @@
 					{text: "Cheese"},
 					{text: "Whatever else humans are supposed to eat"}
 				]
+			}
+		})
+		var app8_computed = new Vue({
+			el: "#app8_computed",
+			data: {
+				messageOld: "Vue"
+			},
+			computed: {
+				messageReversed: function(){
+					return this.messageOld.split("").reverse().join("")
+				}
 			}
 		})
 	</script>
