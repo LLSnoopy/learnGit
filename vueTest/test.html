@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<p>{{message}}</p>
+	</div>
+	<!---v-bind-->
+	<div id="app2">
+		<span v-bind:title="message2">
+			Hover your mouse over me for a few seconds to see my dynamically bound title!
+		</span>
+	</div>
+	<!-- v-if -->
+	<div id="app3">
+		<p v-if="seen">You can see me!</p>
+	</div>
+	<!-- v-for -->
+	<div id="app4">
+		<ol>
+			<li v-for="i in todos">{{i.text}}</li>
+		</ol>
+	</div>
+	<!-- v-on -->
+	<div id="app5">
+		<p>{{message5}}</p>
+		<button v-on:click="reverseMessage5">ReverseMessage5</button>
+	</div>
+	<!-- v-model -->
+	<div id="app6">
+		<p>{{message6}}</p>
+		<input type="text" v-model="message6">
+	</div>
+	<div id="app7">
+		<ol>
+			<todo-item v-for="item in list" v-bind:todo="item"></todo-item>
+		</ol>
+	</div>
+
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				message: "hello Vue!"
+			}
+		})
+		var app2 = new Vue({
+			el: "#app2",
+			data: {
+				message2: 'You load this page on ' + new Date()
+			}
+		})
+		var app3 = new Vue({
+			el: "#app3",
+			data: {
+				seen: true
+			}
+		})
+		var app4 = new Vue({
+			el: "#app4",
+			data: {
+				todos: [
+					{text: "hello,Vue"},
+					{text: "hello,React"},
+					{text: "hello,Angular"}
+				]
+			}
+		})
+		var app5 = new Vue({
+			el: "#app5",
+			data: {
+				message5: "hello Vue!"
+			},
+			methods: {
+				reverseMessage5: function(){
+					this.message5 = this.message5.split("").reverse().join("")
+				}
+			}
+		})
+		var app6 = new Vue({
+			el: "#app6",
+			data: {
+				message6: "hello Vue"
+			}
+		})
+		Vue.component("todo-item",{
+			props: ["todo"],
+			template: "<li>{{todo.text}}</li>"
+		})
+		var app7 = new Vue({
+			el: "#app7",
+			data: {
+				list: [
+					{text: "vegetables"},
+					{text: "Cheese"},
+					{text: "Whatever else humans are supposed to eat"}
+				]
+			}
+		})
+	</script>
+</body>
+</html>
