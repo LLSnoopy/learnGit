@@ -3,46 +3,62 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+	._title{
+		display: inline-block;
+		color: red;
+		float: left;
+		margin-right: 20px;
+	}
+	</style>
 	<script src="https://unpkg.com/vue/dist/vue.js"></script>
 </head>
 <body>
 	<h1>app5和app8作比较</h1>
 	<div id="app">
+		<span class="_title">app1</span>
 		<p>{{message}}</p>
 	</div>
 	<!---v-bind-->
 	<div id="app2">
+		<span class="_title">app2</span>
 		<span v-bind:title="message2">
 			Hover your mouse over me for a few seconds to see my dynamically bound title!
 		</span>
 	</div>
 	<!-- v-if -->
 	<div id="app3">
+		<span class="_title">app3</span>
 		<p v-if="seen">You can see me!</p>
 	</div>
 	<!-- v-for -->
 	<div id="app4">
+		<span class="_title">app4</span>
 		<ol>
 			<li v-for="i in todos">{{i.text}}</li>
 		</ol>
 	</div>
 	<!-- v-on -->
 	<div id="app5">
+		<span class="_title">app5</span>
 		<p>{{message5}}</p>
 		<button v-on:click="reverseMessage5">ReverseMessage5</button>
 	</div>
 	<!-- v-model -->
 	<div id="app6">
+		<span class="_title">app6</span>
 		<p>{{message6}}</p>
 		<input type="text" v-model="message6">
 	</div>
 	<div id="app7">
+		<span class="_title">app7</span>
 		<ol>
 			<todo-item v-for="item in list" v-bind:todo="item"></todo-item>
 		</ol>
 	</div>
 	<!-- 计算属性 -->
 	<div id="app8_computed">
+		<span class="_title">app8</span>
 		<p>Original message: {{messageOld}}</p>
 		<p>Computed reversed message: {{messageReversed}}</p>
 	</div>
